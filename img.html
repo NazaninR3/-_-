@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>body {
+        margin: 0;
+        min-height: 100vh;
+        background: #000;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10vmin;
+        overflow: hidden;
+        transform: skew(5deg);
+      
+        .card {
+          flex: 1;
+          transition: all 1s ease-in-out;
+          height: 75vmin;
+          position: relative;
+          .love {
+            color: black;
+            background: rgba(255, 30, 173, 0.75);
+            padding: 0.5em;
+            transform: rotate(-90deg);
+            transform-origin: 0% 0%;
+            transition: all 0.5s ease-in-out;
+            min-width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 1em;
+            white-space: nowrap;
+          }
+      
+          &:hover {
+            flex-grow: 10;
+            img {
+              filter: grayscale(0);
+            }
+            .love {
+              text-align: center;
+              top: calc(100% - 2em);
+              color: white;
+              background: rgba(0, 0, 0, 0.5);
+              font-size: 2em;
+              transform: rotate(0deg) skew(-5deg);
+            }
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 1s ease-in-out;
+            filter: grayscale(100%);
+          }
+          &:not(:nth-child(5)) {
+            margin-right: 1em;
+          }
+        }
+      }</style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <img src="https://i.pinimg.com/564x/e9/5a/63/e95a633c9615a245b06057adb2fa1e56.jpg">
+          <div class="love">ME</div>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/564x/24/ea/21/24ea21b5da9e716bc0dac1997cfb54fc.jpg">
+          <div class="love">Self Love</div>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/4c/d0/27/4cd027bc362a5cc627154f453ce57d3c.jpg">
+          <div class="love">Grow</div>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/564x/6b/f8/05/6bf805ad6d251309c7ce24613e03dbda.jpg">
+          <div class="love">Believe</div>
+        </div>
+        <div class="card">
+          <img src="https://i.pinimg.com/564x/2d/18/4b/2d184b68fa24bfa435b4fd43d680cad8.jpg">
+          <div class="love">Resilient</div>
+        </div>
+      </div>
+</body>
+</html>
